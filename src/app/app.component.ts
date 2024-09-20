@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-// import { Task } from 'zone.js/lib/zone-impl';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +6,25 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  
   title = 'basicx';
   isConnected: boolean = true;
 
-  tasks: any = [
-    {
-      id: 1,
-      title: "Apprendre Angular",
-      done: true,
-    },
-    {
-      id: 2,
-      title: "Rejoindre le Discord de Bonjour Angular",
-      done: true,
-    },
-    {
-      id: 3,
-      title: "Centrer une div",
-      done: false,
-    },
-  ];
+  fullname: string = 'Malik Ture Lumumba'; // interpolation
 
-  user: any = {
-    id: 1,
-    role: "teacher",
-  };
+  isDisabled: boolean = true; // property binding
+  image: string = 'https://angular.io/assets/images/logos/angular/angular.png';
+
+  name: string = 'John Doe'; //2 way binding
+
+  constructor() {}
+
+  alert(message: string) {
+    window.alert(message);
+  }
+
+
+
+  
 }

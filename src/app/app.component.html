@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Control-flow</title>
+  <title>Data binding</title>
 </head>
 <body>
   
@@ -32,28 +32,23 @@
   <div class="container m-5">
     <div class="card">
       <div class="card-header">
-        Liste de taches
+        Data binding
       </div>
       <div class="card-body">
-        <ul>
-          @for (task of tasks; track task.id) {
-          <li>{{ task.title }}</li>
-          } @empty {
-          <li>Aucune tâche</li>
-          }
-        </ul>
+        <p>Interpolation: {{fullname}}</p>
         <hr>
-        <p>
-          @switch (user.role) { @case('student') {
-          <span>Vous êtes un.e étudiant.e</span>
-          } @case('teacher') {
-          <span>Vous êtes un.e enseignant.e</span>
-          } @case('director') {
-          <span>Vous êtes un.e directeur.rice</span>
-          } @default {
-          <span>Vous êtes un.e inconnu.e</span>
-          } }
-        </p>
+
+        <button [disabled]="isDisabled">Mon bouton</button>
+        <img [src]="image" />
+        <hr>
+
+        <button (click)="alert('Bonjour Angular')">Bingo</button>
+        <hr>
+
+        <!-- si l’utilisateur écrit dans l’input, cela modifiera la propriété name et 
+         ce changement sera reflété automatiquement dans {{ name }}.-->
+        <input type="text" [(ngModel)]="name" />
+        <p>Mon nom est {{ name }}</p>
       </div>
     </div>
   </div>
